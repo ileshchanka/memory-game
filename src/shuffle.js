@@ -1,0 +1,14 @@
+/**
+ * Returns a new array shuffled with the Fisher–Yates algorithm.
+ * @template T
+ * @param {T[]} items
+ * @returns {T[]}
+ */
+export function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
